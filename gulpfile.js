@@ -7,17 +7,17 @@ gulp.task("marked", function() {
   .pipe(marked({
     gfm: true
   }))
-  .pipe(gulp.dest("./html/"))
+  .pipe(gulp.dest("./"))
 });
 
 gulp.task("sass", function() {
-return gulp.src("./scss/.scss")
+return gulp.src("./sass/.scss")
 .pipe(sass())
 .pipe(gulp.dest("./css"));
 });
 
 gulp.task("watch", function() {
-  gulp.watch("./scss/.scss", ["sass"])
+  gulp.watch("./sass/.scss", ["sass"])
   gulp.watch("./src/*.md", ["marked"]);
 });
 
